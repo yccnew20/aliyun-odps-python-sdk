@@ -693,6 +693,7 @@ default_options.register_option(
 default_options.register_option(
     "mars.container_status_timeout", 120, validator=is_integer
 )
+default_options.register_option("odps.sql.allow.fullscan", True, validator=is_bool)
 
 
 _options_local = threading.local()

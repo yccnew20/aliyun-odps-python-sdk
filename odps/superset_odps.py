@@ -248,6 +248,8 @@ class ODPSEngineSpec(BaseEngineSpec):
         try:
             hints = {
                 "odps.sql.jobconf.odps2": "true",
+                "odps.sql.allow.fullscan":"true",
+
             }
             conn_project_as_schema = getattr(
                 cursor.connection, "_project_as_schema", None
@@ -261,7 +263,7 @@ class ODPSEngineSpec(BaseEngineSpec):
                     {
                         "odps.sql.allow.namespace.schema": "true",
                         "odps.namespace.schema": "true",
-                        "odps.sql.allow.fullscan":"true";
+                        "odps.sql.allow.fullscan":"true",
                     }
                 )
             cursor.execute(query, hints=hints)
