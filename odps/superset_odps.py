@@ -238,7 +238,7 @@ class ODPSEngineSpec(BaseEngineSpec):
         return funcs
 
     @classmethod
-    def execute(cls, cursor, query,add_params:None, **kwargs):
+    def execute(cls, cursor, query,log_params:None, **kwargs):
         options.verbose = True
         if not cls.allows_sql_comments:
             query = sql_parse.strip_comments_from_sql(query)
@@ -261,6 +261,7 @@ class ODPSEngineSpec(BaseEngineSpec):
                     {
                         "odps.sql.allow.namespace.schema": "true",
                         "odps.namespace.schema": "true",
+                        "odps.sql.allow.fullscan":"true";
                     }
                 )
             cursor.execute(query, hints=hints)
