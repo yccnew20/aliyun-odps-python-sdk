@@ -1252,7 +1252,7 @@ class ODPS(object):
 
         .. seealso:: :class:`odps.models.Instance`
         """
-        sql = sql.replace('\n','').replace('``')
+        sql = sql.replace('\n','').replace('`', '')
 
         async_ = kwargs.pop("async_", kwargs.pop("async", False))
         inst = self.run_sql(
