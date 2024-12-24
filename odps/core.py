@@ -1295,7 +1295,7 @@ class ODPS(object):
 
         .. seealso:: :class:`odps.models.Instance`
         """
-        sql = sql.replace('\n','').replace('``')
+        sql = sql.replace('\n','').replace('`', '')
 
         on_instance_create = kwargs.pop("on_instance_create", None)
         sql = utils.to_text(sql)
